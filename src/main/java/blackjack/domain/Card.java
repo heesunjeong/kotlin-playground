@@ -9,6 +9,11 @@ public class Card {
         this.number = CardNumber.of(number);
     }
 
+    public Card(CardShape shape, CardNumber number) {
+        this.shape = shape;
+        this.number = number;
+    }
+
     public CardShape getShape() {
         return shape;
     }

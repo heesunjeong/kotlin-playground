@@ -12,8 +12,8 @@ class CardTest {
         Card card = new Card("SPADE", "a");
 
         assertAll(
-                () -> assertEquals(card.getNumber(), CardNumber.A),
-                () -> assertEquals(card.getShape(), CardShape.SPADE)
+                () -> assertThat(card.getNumber()).isEqualTo(CardNumber.A),
+                () -> assertThat(card.getShape()).isEqualTo(CardShape.SPADE)
         );
     }
 
