@@ -9,14 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class CardShapeTest {
     @Test
     void create() {
-        CardShape cardShape = new CardShape("hearts");
+        CardShape cardShape = CardShape.of("heart");
 
-        assertThat(cardShape).hasToString("HEARTS");
+        assertThat(cardShape).isEqualTo(CardShape.HEART);
     }
 
     @Test
     void create_invalid() {
-        assertThatThrownBy(() -> new CardShape("SQUARES"))
+        assertThatThrownBy(() -> CardShape.of("square"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }

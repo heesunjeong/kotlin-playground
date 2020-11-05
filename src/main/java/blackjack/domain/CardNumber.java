@@ -1,37 +1,35 @@
 package blackjack.domain;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
 
-public class CardNumber {
-    private static final List<String> NUMBERS = Arrays.asList("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "K", "Q");
+public enum CardNumber {
+    A("A", 1),
+    TWO("2", 2),
+    THREE("3", 3),
+    FOUR("4", 4),
+    FIVE("5", 5),
+    SIX("6", 6),
+    SEVEN("7", 7),
+    EIGHT("8", 8),
+    NINE("9", 9),
+    TEN("10", 10),
+    J("J", 10),
+    K("K", 10),
+    Q("Q", 10);
 
     private final String number;
+    private final int score;
 
-    public CardNumber(String number) {
-        String cardNumber = number.toUpperCase();
-        this.validate(cardNumber);
-        this.number = cardNumber;
+    CardNumber(String number, int score) {
+        this.number = number;
+        this.score = score;
     }
 
-    private void validate(String number) {
-        if(!NUMBERS.contains(number)) {
-            throw new IllegalArgumentException("사용 할 수 없는 카드 숫자입니다.");
-        }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CardNumber that = (CardNumber) o;
-        return Objects.equals(number, that.number);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(number);
+    public static CardNumber of(String number) {
+        return Arrays.stream(values())
+                .filter(it -> number.equalsIgnoreCase(it.number))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("사용 할 수 없는 카드 숫자입니다."));
     }
 
     @Override

@@ -5,8 +5,8 @@ public class Card {
     private final CardNumber number;
 
     public Card(String shape, String number) {
-        this.shape = new CardShape(shape);
-        this.number = new CardNumber(number);
+        this.shape = CardShape.of(shape);
+        this.number = CardNumber.of(number);
     }
 
     public CardShape getShape() {
