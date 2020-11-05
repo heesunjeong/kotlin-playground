@@ -11,6 +11,7 @@ repositories {
 }
 dependencies {
     testImplementation(kotlin("test-junit5"))
+    testImplementation("org.assertj:assertj-core:3.11.1")
 }
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
