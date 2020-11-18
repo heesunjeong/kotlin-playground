@@ -10,7 +10,7 @@ class BlackjackGameTest {
     void create() {
         BlackjackGame blackjackGame = new BlackjackGame("joy,dave");
 
-        assertThat(blackjackGame.getPlayers())
-                .containsExactly(new User("joy"), new User("dave"));
+        assertThat(blackjackGame.getPlayers().size()).isEqualTo(3);
+        assertThat(blackjackGame.getPlayers()).contains(new User("joy"), new User("dave"));
     }
 }

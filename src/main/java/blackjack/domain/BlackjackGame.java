@@ -1,24 +1,17 @@
 package blackjack.domain;
 
-import blackjack.domain.Player;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class BlackjackGame {
     private final CardDeck cardDeck;
-    private final List<Player> players;
+    private final Players players;
 
     public BlackjackGame(String names) {
         this.cardDeck = new CardDeck();
-        this.players = new ArrayList<>();
-
-        for (String name : names.split(",")) {
-            players.add(new Player(name));
-        }
+        this.players = new Players(names);
     }
 
     public  List<Player> getPlayers() {
-        return players;
+        return players.getPlayers();
     }
 }
