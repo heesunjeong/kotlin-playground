@@ -12,4 +12,16 @@ class CardDeckTest {
 
         assertThat(cardDeck.size()).isEqualTo(52);
     }
+
+    @Test
+    void pullOut() {
+        CardDeck cardDeck = new CardDeck();
+
+        Card card = cardDeck.pullOut();
+
+        assertAll(
+                () -> assertThat(card).isInstanceOf(Card.class),
+                () -> assertThat(cardDeck.size()).isEqualTo(51)
+        );
+    }
 }
