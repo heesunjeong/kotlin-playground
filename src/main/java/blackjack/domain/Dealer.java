@@ -2,7 +2,7 @@ package blackjack.domain;
 
 import java.util.List;
 
-public class Dealer implements User {
+public class Dealer implements Player {
 
     private static final int MAX_SCORE = 17;
 

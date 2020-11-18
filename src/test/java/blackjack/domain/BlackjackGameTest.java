@@ -1,7 +1,5 @@
 package blackjack.domain;
 
-import blackjack.domain.BlackjackGame;
-import blackjack.domain.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
@@ -13,6 +11,6 @@ class BlackjackGameTest {
         BlackjackGame blackjackGame = new BlackjackGame("joy,dave");
 
         assertThat(blackjackGame.getPlayers())
-                .containsExactly(new Player("joy"), new Player("dave"));
+                .containsExactly(new User("joy"), new User("dave"));
     }
 }
