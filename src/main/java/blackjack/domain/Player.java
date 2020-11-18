@@ -3,7 +3,7 @@ package blackjack.domain;
 import java.util.List;
 import java.util.Objects;
 
-public class Player {
+public class Player implements User {
     private final String name;
     private final Cards cards;
     private boolean stay = false;

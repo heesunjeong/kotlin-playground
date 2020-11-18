@@ -32,6 +32,10 @@ public enum CardNumber {
                 .orElseThrow(() -> new IllegalArgumentException("사용 할 수 없는 카드 숫자입니다."));
     }
 
+    public int getScore() {
+        return score;
+    }
+
     @Override
     public String toString() {
         return number;

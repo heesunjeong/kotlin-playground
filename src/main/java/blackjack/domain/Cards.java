@@ -26,6 +26,12 @@ public class Cards {
         }
     }
 
+    public int sumTotalScore() {
+        return this.cards.stream()
+                .mapToInt(Card::getScore)
+                .sum();
+    }
+
     public int size() {
         return cards.size();
     }
