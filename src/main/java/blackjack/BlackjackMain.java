@@ -10,6 +10,7 @@ public class BlackjackMain {
         String players = InputView.inputPlayers();
 
         BlackjackGame game = new BlackjackGame(players);
+        OutputView.printPullOutCard(players, game.getPlayers());
 
     }
 }

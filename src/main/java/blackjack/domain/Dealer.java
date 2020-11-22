@@ -5,6 +5,7 @@ import java.util.List;
 public class Dealer implements Player {
 
     private static final int MAX_SCORE = 17;
+    public static final String NAME = "딜러";
 
     private final Cards cards;
 
@@ -27,7 +28,12 @@ public class Dealer implements Player {
     }
 
     @Override
-    public List<Card> getCards() {
-        return cards.getCards();
+    public Cards getCards() {
+        return cards;
+    }
+
+    @Override
+    public String getName() {
+        return NAME;
     }
 }

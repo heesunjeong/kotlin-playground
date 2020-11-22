@@ -17,8 +17,13 @@ public class User implements Player {
         cards.add(card);
     }
 
-    public List<Card> getCards() {
-        return cards.getCards();
+    public Cards getCards() {
+        return cards;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     public void stay() {

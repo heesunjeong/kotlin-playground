@@ -21,7 +21,7 @@ public class Cards {
     }
 
     private void validate(Card card) {
-        if(cards.contains(card) ) {
+        if (cards.contains(card)) {
             throw new IllegalArgumentException("카드는 중복으로 있을 수 없습니다.");
         }
     }
@@ -38,5 +38,10 @@ public class Cards {
 
     public List<Card> getCards() {
         return cards;
+    }
+
+    @Override
+    public String toString() {
+        return "" + cards;
     }
 }

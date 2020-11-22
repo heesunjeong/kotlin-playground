@@ -1,5 +1,6 @@
 package blackjack.domain;
 
+import com.sun.tools.javac.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +14,7 @@ class DealerTest {
         Dealer dealer = new Dealer();
         dealer.receive(new Card(CardShape.DIAMOND, CardNumber.FIVE));
 
-        assertThat(dealer.getCards()).containsExactly(new Card(CardShape.DIAMOND, CardNumber.FIVE));
+        assertThat(dealer.getCards().getCards()).containsExactly(new Card(CardShape.DIAMOND, CardNumber.FIVE));
     }
 
     @DisplayName("Dealer가 17이 될때까지 카드를 받을 수 있다")

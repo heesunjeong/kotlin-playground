@@ -9,5 +9,7 @@ public interface Player {
 
     void stay();
 
-    List<Card> getCards();
+    Cards getCards();
+
+    String getName();
 }

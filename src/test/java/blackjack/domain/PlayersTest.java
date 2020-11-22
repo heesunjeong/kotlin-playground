@@ -12,8 +12,9 @@ class PlayersTest {
     void create() {
         Players players = new Players("joy");
 
-        assertThat(players.getPlayers().size()).isEqualTo(2);
-        assertThat(players.getPlayers()).contains(new User("joy"));
+        assertThat(players.getPlayers())
+                .hasSize(2)
+                .contains(new User("joy"));
     }
 
     @Test
@@ -22,5 +23,13 @@ class PlayersTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
+    @Test
+    void receive() {
+        Players players = new Players("joy,dave");
+        CardDeck cardDeck = new CardDeck();
 
+        players.receive(cardDeck);
+
+        assertThat(cardDeck.size()).isEqualTo(49);
+    }
 }
