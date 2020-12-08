@@ -11,6 +11,5 @@ public class BlackjackMain {
 
         BlackjackGame game = new BlackjackGame(players);
         OutputView.printPullOutCard(players, game.getPlayers());
-
     }
 }

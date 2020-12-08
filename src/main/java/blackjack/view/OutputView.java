@@ -16,7 +16,7 @@ public class OutputView {
     public static void printPullOutCard(String players, List<Player> gamePlayers) {
         System.out.println(String.format("딜러와 %s에게 카드를 두장씩 나누었습니다.", players));
         for (Player gamePlayer : gamePlayers) {
-            System.out.println(String.format("%s: %s", gamePlayer.getName(), gamePlayer.getCards()));
+            System.out.println(String.format("%s: %s", gamePlayer.getName(), gamePlayer.displayCard()));
         }
     }
 }

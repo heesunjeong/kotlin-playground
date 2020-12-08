@@ -22,7 +22,7 @@ class UserTest {
         User user = new User("joy");
         user.receive(new Card(CardShape.DIAMOND, CardNumber.FIVE));
 
-        assertThat(user.getCards()).containsExactly(new Card(CardShape.DIAMOND, CardNumber.FIVE));
+        assertThat(user.getCards().getCards()).containsExactly(new Card(CardShape.DIAMOND, CardNumber.FIVE));
     }
 
     @DisplayName("User가 게임을 STAY한다.")
@@ -45,5 +45,17 @@ class UserTest {
 
         assertThatThrownBy(user::stay)
                 .isInstanceOf(IllegalStateException.class);
+    }
+
+    @DisplayName("User가 받은 카드를 보여준다.")
+    @Test
+    void displayCard() {
+        User user = new User("joy");
+        user.receive(new Card(CardShape.DIAMOND, CardNumber.FIVE));
+        user.receive(new Card(CardShape.DIAMOND, CardNumber.SEVEN));
+
+        assertThat(user.displayCard())
+                .hasSize(2)
+                .containsExactly(new Card(CardShape.DIAMOND, CardNumber.FIVE), new Card(CardShape.DIAMOND, CardNumber.SEVEN));
     }
 }

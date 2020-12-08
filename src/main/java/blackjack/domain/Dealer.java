@@ -1,5 +1,6 @@
 package blackjack.domain;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Dealer implements Player {
@@ -25,6 +26,11 @@ public class Dealer implements Player {
 
     @Override
     public void stay() {
+    }
+
+    @Override
+    public  List<Card> displayCard() {
+        return Arrays.asList(cards.getFirstCard());
     }
 
     @Override

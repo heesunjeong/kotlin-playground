@@ -1,6 +1,5 @@
 package blackjack.domain;
 
-import com.sun.tools.javac.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -38,4 +37,15 @@ class DealerTest {
         assertThat(dealer.isReceivable()).isFalse();
     }
 
+    @DisplayName("Dealer가 받은 카드 중 한장을 보여준다.")
+    @Test
+    void displayCard() {
+        Dealer user = new Dealer();
+        user.receive(new Card(CardShape.DIAMOND, CardNumber.FIVE));
+        user.receive(new Card(CardShape.DIAMOND, CardNumber.SEVEN));
+
+        assertThat(user.displayCard())
+                .hasSize(1)
+                .containsExactly(new Card(CardShape.DIAMOND, CardNumber.FIVE));
+    }
 }

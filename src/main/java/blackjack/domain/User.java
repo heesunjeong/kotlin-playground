@@ -17,6 +17,11 @@ public class User implements Player {
         cards.add(card);
     }
 
+    @Override
+    public List<Card> displayCard() {
+        return cards.getCards();
+    }
+
     public Cards getCards() {
         return cards;
     }

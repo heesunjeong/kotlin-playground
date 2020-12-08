@@ -12,4 +12,6 @@ public interface Player {
     Cards getCards();
 
     String getName();
+
+    List<Card> displayCard();
 }
